@@ -33,3 +33,7 @@ Then('I logout the app', async () => {
   await loginPage.hamburgurButton.click();
   await loginPage.logoutButton.click();
 });
+
+Then('I should see the error message for invalid credentials', async () => {
+  await expect(loginPage.errorMessage).toBeExisting();
+});
